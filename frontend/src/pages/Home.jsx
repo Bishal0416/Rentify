@@ -20,7 +20,7 @@ function Home() {
     // Fetch property data from an API
     const fetchProperties = async () => {
       try {
-        const response = await fetch('/api/v1/property/get');
+        const response = await fetch(`${import.meta.env.VITE_API}/api/v1/property/get`);
         if (!response.ok) {
           throw new Error('Failed to fetch properties');
         }

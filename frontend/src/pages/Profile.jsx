@@ -21,7 +21,7 @@ function Profile() {
     e.preventDefault();
     try {
       dispatch(updateUserStart());
-      const res = await fetch(`/api/v1/user/update/${currentUser._id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API}/api/v1/user/update/${currentUser._id}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ function Profile() {
   const handleDeleteUser = async () => {
     try {
       dispatch(deleteUserStart());
-      const res = await fetch(`/api/v1/user/delete/${currentUser._id}`, {
+      const res = await fetch(`${import.meta.env.VITE_API}/api/v1/user/delete/${currentUser._id}`, {
         method: 'DELETE',
       });
       const data = await res.json();
@@ -60,7 +60,7 @@ function Profile() {
   const handleSignOut = async () => {
     try {
       dispatch(signOutUserStart());
-      const res = await fetch('/api/v1/auth/signout');
+      const res = await fetch(`${import.meta.env.VITE_API}/api/v1/auth/signout`);
       console.log(res);
       const data = await res.json();
       if (data.success === false) {
@@ -77,7 +77,7 @@ function Profile() {
   const handleShowListings = async () => {
     try {
       setShowListingsError(false);
-      const res = await fetch(`/api/v1/user/show/${currentUser._id}`);
+      const res = await fetch(`${import.meta.env.VITE_API}/api/v1/user/show/${currentUser._id}`);
       const data = await res.json();
       console.log(data);
       if (data.success === false) {
@@ -93,7 +93,7 @@ function Profile() {
 
   const handleDeleteProperty = async (propertyid) => {
     try {
-      const res = await fetch(`/api/v1/property/delete/${propertyid}`, {
+      const res = await fetch(`${import.meta.env.VITE_API}/api/v1/property/delete/${propertyid}`, {
         method: 'DELETE',
       });
       const data = await res.json();

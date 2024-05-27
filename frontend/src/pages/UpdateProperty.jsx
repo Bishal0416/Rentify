@@ -139,7 +139,7 @@ export default function UpdateProperty() {
                 return setError("You must upload at least one image");
             setLoading(true);
             setError(false);
-            const res = await fetch(`/api/v1/property/update/${params.propertyid}`, {
+            const res = await fetch(`${import.meta.env.VITE_API}/api/v1/property/update/${params.propertyid}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
