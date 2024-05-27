@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 function Home() {
 
+  console.log("API: ", import.meta.env.VITE_API);
   const [properties, SetProperties] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
 
