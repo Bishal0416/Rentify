@@ -30,7 +30,6 @@ export const signIn = async (req, res, next) => {
             .cookie("accessToken", token, {httpOnly: true})
             .status(200)
             .json(rest);
-            
     } catch(error){
         next(error);
     }

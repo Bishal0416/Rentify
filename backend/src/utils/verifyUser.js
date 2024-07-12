@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 import { errorHandler } from './errorHandler.js';
 
 export const verifyToken = (req, res, next) => {
-    console.log(req.cookies.accessToken);
+    // console.log(req.cookies.accessToken);
     const token = req.cookies.accessToken;
 
     if (!token) return next(errorHandler(401, 'Unauthorized'));

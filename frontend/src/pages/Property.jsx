@@ -36,7 +36,7 @@ export default function Property() {
   const  handleContactLandlord = async() => {
     setContact(true);
       try {
-        const res = await fetch(`${import.meta.env.VITE_API}/api/v1/user/${listing.userRef}`);
+        const res = await fetch(`/api/v1/user/${listing.userRef}`);
         const data = await res.json();
         setLandlord(data);
         console.log(data);
@@ -50,7 +50,7 @@ export default function Property() {
     const fetchListing = async () => {
       try {
         setLoading(true);
-        const res = await fetch(`${import.meta.env.VITE_API}/api/v1/property/get/${params.listingid}`);
+        const res = await fetch(`/api/v1/property/get/${params.listingid}`);
         const data = await res.json();
         if (data.success === false) {
           setError(true);

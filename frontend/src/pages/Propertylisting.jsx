@@ -123,7 +123,7 @@ export default function Propertylisting() {
                 return setError("You must upload at least one image");
             setLoading(true);
             setError(false);
-            const res = await fetch(`${import.meta.env.VITE_API}/api/v1/property/create`, {
+            const res = await fetch(`/api/v1/property/create`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
