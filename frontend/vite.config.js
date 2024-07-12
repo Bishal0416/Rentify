@@ -9,6 +9,7 @@ export default defineConfig({
       '/api' : {
         target : "https://rentify-gz9s.onrender.com",
         secure : false,
+        changeOrigin: true,
       },
     },
   },
